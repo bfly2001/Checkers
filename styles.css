@@ -7,3 +7,15 @@ table {
     width: 100vw;
     height: auto;
 }
+
+tr {
+    height: 10vh;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
