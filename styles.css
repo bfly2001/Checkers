@@ -19,3 +19,21 @@ tr {
 .red {
     background-color: red;
 }
+
+.redpiece {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.blackpiece {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
