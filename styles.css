@@ -12,6 +12,11 @@ tr {
     height: 10vh;
 }
 
+td {
+    width: 10vw;
+    height: 10vw;
+}
+
 .black {
     background-color: black;
 }
