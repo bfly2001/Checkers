@@ -52,7 +52,7 @@
             <!-- row three -->
             <tr>
                 <td class='black'>
-                    <img class="redpiece" src="images/red.svg">
+                    <img class="redpiece" id="drag" src="images/red.svg"  draggable="true" ondragstart="dragThis(event)">
                 </td>
                 <td class='red'></td>
                 <td class='black'>
@@ -80,7 +80,7 @@
                 <td class='black'></td> 
             </tr>
             <tr>
-                <td class='black'></td>
+                <td class='black' ondrop="dropThis(event)" ondragover="allowDropThis(event)"></td>
                 <td class='red'></td>
                 <td class='black'></td>
                 <td class='red'></td>
@@ -94,7 +94,7 @@
             <tr>
                 <td class='red'></td>
                 <td class='black'>
-                    <img class="blackpiece" src="images/black.svg">
+                    <img class="blackpiece" class="draggable" src="images/black.svg">
                 </td>
                 <td class='red'></td>
                 <td class='black'>
