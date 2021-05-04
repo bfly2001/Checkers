@@ -12,3 +12,8 @@ function dropThis(i) {
     i.target.appendChild(document.getElementById(data));
 }
 
+function jumpOver(event) {
+    let blackPiece = document.getElementById('blackpiece1');
+    blackPiece.remove();
+}
+
