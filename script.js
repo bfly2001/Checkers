@@ -2,10 +2,10 @@ const blackPiece1 = document.getElementById('blackpiece1');
 const redPiece1 = document.getElementById('redpiece1');
 
 function allowDropThis(i) {
-    if (i.target.id == 'redpiece1' ) {
-        blackPiece1.remove();
-    } else if (i.target.className == 'blackpiece1') {
-        redPiece1.remove();
+    if (i.target.className == 'redpiece' ) {
+        i.target.remove();
+    } else if (i.target.className == 'blackpiece') {
+        i.target.remove();
     } else {
         i.preventDefault();
     }
