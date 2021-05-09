@@ -1,9 +1,10 @@
 
 function allowDropThis(i) {
-    if (i.target.className == 'redpiece' ) {
-        i.target.remove();
-    } else if (i.target.className == 'blackpiece') {
-        i.target.remove();
+    let checkerPiece = i.target.id;
+    if (checkerPiece.className == 'redpiece' ) {
+        checkerPiece.remove();
+    } else if (checkerPiece.className == 'blackpiece') {
+        checkerPiece.remove();
     } else {
         i.preventDefault();
     }
