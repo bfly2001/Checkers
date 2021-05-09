@@ -1,5 +1,3 @@
-const blackPiece1 = document.getElementById('blackpiece1');
-const redPiece1 = document.getElementById('redpiece1');
 
 function allowDropThis(i) {
     if (i.target.className == 'redpiece' ) {
