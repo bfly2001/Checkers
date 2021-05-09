@@ -21,18 +21,3 @@ function dropThis(i) {
     i.target.append(document.getElementById(data));
 }
 
-/*function jumpOverBlack1(event) {
-    if (event.target.firstChild.className == 'blackpiece' ) {
-        blackPiece1.remove();
-    } else {
-        return false;
-    };
-}*/
-
-/*function jumpOverRed1(event) {
-    if (event.target.firstChild.className == 'redpiece') {
-        redPiece1.remove();
-    } else {
-        return false;
-    };      
-} */
