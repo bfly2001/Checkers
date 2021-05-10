@@ -1,6 +1,6 @@
 
 function allowDropThis(i) {
-    let checkerPiece = i.target.id;
+    let checkerPiece = i.target.className;
     if (checkerPiece.className == 'redpiece' ) {
         checkerPiece.remove();
     } else if (checkerPiece.className == 'blackpiece') {
