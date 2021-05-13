@@ -1,4 +1,5 @@
-var dragged;
+/*
+let dragged;
 
 document.addEventListener("drag", function( event ) {
 
@@ -23,12 +24,13 @@ document.addEventListener("dragleave", function( event ) {
 document.addEventListener("drop", function ( event ) {
     event.preventDefault();
     if ( event.target.className == "dropzone" ) {
+        event.target.style.background = "";
         dragged.parentNode.removeChild( dragged );
         event.target.appendChild( dragged );
     }
 
 }, false);
-
+*/
 
 
 /*
@@ -53,3 +55,25 @@ function dropThis(i) {
     i.target.append(document.getElementById(data));
 }*/
 
+function dragStart(e) {
+    e.dataTransfer.effectAllowed="move";
+    e.dataTransfer.setData('Text', e.target.getAttribute('id'));
+    e.dataTransfer.setDragImage(e.target, 0,0);
+    return true;
+}
+
+function dragEnter(e) {
+    event.preventDefault();
+    return true;
+}
+
+function dragOver(e) {
+    return false;
+}
+
+function dragDrop(e) {
+    let src = e.dataTransfer.getData('Text');
+    e.target.appendChild(document.getElementById(src));
+    e.stopPropagation();
+    return false;
+}
