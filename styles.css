@@ -53,10 +53,10 @@ td {
 }
 
 #player1 {
-    background-color: red;
+    background-color: grey;
 }
 
 #player2 {
     color: white;
-    background-color: black;
+    background-color: grey;
 }
