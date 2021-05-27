@@ -3,10 +3,22 @@
 function dragStart(e) {
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData('Text', e.target.id);
-    //e.dataTransfer.setDragImage(e.target, 0,0);
     console.log('start');
     return true;
+}
 
+function dragEnd(e) {
+    let turn = e.target;
+    if (turn.classList.contains('blackpiece')) {
+        document.getElementById('player1').style.backgroundColor = "red";
+        document.getElementById('player2').style.backgroundColor = "grey";
+    } else if(turn.classList.contains('redpiece')) {
+        document.getElementById('player2').style.backgroundColor = "black";
+        document.getElementById('player1').style.backgroundColor = "grey";
+    } else {
+        document.getElementById('player1').style.backgroundColor = "grey";
+        document.getElementById('player2').style.backgroundColor = "grey";
+    }
 }
 
 function dragEnter(e) {
@@ -28,7 +40,6 @@ function dragLeave(e) {
     e.preventDefault();
     return false;
 }
-
 
 function dragDrop(e) {
     let src = e.dataTransfer.getData('Text');
