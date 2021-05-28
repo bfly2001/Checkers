@@ -52,6 +52,8 @@ td {
 }
 
 .player {
+    display: grid;
+    align-content: center;
     text-align: center;
     padding: 3%;
     font-family: 'Share Tech Mono', monospace;
@@ -67,3 +69,23 @@ td {
     color: white;
     background-color: grey;
 }
+
+@media screen and (min-width: 600px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    
+}
+
+@media screen and (min-width: 1280px) {
+    
+}
+
+@media screen and (min-width: 1440px) {
+    
+}
+
+
+
+
