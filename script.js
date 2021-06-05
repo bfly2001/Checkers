@@ -3,6 +3,7 @@
 function dragStart(e) {
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData('Text', e.target.id);
+    console.log(e);
     return true;
 }
 
@@ -30,5 +31,7 @@ function dragDrop(e) {
     let src = e.dataTransfer.getData('Text');
     e.target.append(document.getElementById(src));
     e.stopPropagation();
+    console.log(e);
+    console.log(src);
     return false;
 }
