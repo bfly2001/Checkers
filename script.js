@@ -2,7 +2,8 @@
 
 function dragStart(e) {
     e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData('Text', e.target.id);
+    e.dataTransfer.dropEffect = "move";
+    e.dataTransfer.setData('text/plain', e.target.id);
     console.log(e);
     return true;
 }
@@ -22,12 +23,14 @@ function dragEnd(e) {
 }
 
 function dragOver(e) {
+    console.log(e);
     e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
     return false;
 }
 
 function dragDrop(e) {
-    e.preventDefault();
+    //e.preventDefault();
     let src = e.dataTransfer.getData('Text');
     e.target.append(document.getElementById(src));
     e.stopPropagation();
