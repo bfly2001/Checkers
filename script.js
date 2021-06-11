@@ -37,15 +37,13 @@ function dragEnd(e) {
 function dragOver(e) {
     console.log(e);
     e.preventDefault();
-    let src = e.dataTransfer.getData('Text');
     e.dataTransfer.dropEffect = "move";
-    console.log(src);
-        if (e.target.hasChildNodes() == true){
-            if (e.target.classList.contains('.blackpiece')) {
-            e.target.removeChild(blackpiece);
-            } else if (e.target.classList.contains('.redpiece')) {
-            e.target.removeChild(redpiece);
-            }
+        if (e.target.firstElementChild){
+            if (e.target.firstElementChild.classList.contains('.blackpiece')) {
+            e.target.firstElementChild.remove();
+            } else if (e.target.firstElementChild.classList.contains('.redpiece')) {
+            e.target.firstElementChild.remove();
+            } 
         } else {
             return false;
         }     
@@ -56,7 +54,5 @@ function dragDrop(e) {
     let src = e.dataTransfer.getData('Text');
     e.target.append(document.getElementById(src));
     e.stopPropagation();
-    console.log(e);
-    console.log(src);
     return false;
 }
