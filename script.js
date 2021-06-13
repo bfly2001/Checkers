@@ -23,18 +23,8 @@ function dragEnd(e) {
 }
 
 function dragOver(e) {
-    console.log(e);
     e.preventDefault();
-    //e.dataTransfer.dropEffect = "move";
-        if (e.target.hasChildNodes){
-            if (e.target.firstChild.classList.contains('blackpiece')) {
-            e.target.firstChild.remove();
-            } else if (e.target.firstChild.classList.contains('redpiece')) {
-            e.target.firstChild.remove();
-            } 
-        } else {
-            return false;
-        }     
+    return false;     
 }
 
 function dragDrop(e) {
