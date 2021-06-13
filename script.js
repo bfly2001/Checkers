@@ -27,6 +27,24 @@ function dragOver(e) {
     return false;     
 }
 
+function dragEnterRed(e) {
+    console.log(e);
+    if (e.currentTarget.className == 'blackpiece') {
+        e.currentTarget.remove();
+    } else {
+        return false;
+    }
+}
+
+function dragEnterBlack(e) {
+    console.log(e);
+    if (e.currentTarget.className == 'redpiece') {
+        e.currentTarget.remove();
+    } else {
+        return false;
+    }
+}
+
 function dragDrop(e) {
     //e.preventDefault();
     let src = e.dataTransfer.getData('Text');
