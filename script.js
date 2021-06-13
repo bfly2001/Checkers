@@ -1,17 +1,5 @@
 'use strict';
 
-let redpieces = document.querySelectorAll('.redpiece');
-let blackpieces = document.querySelectorAll('.blackpiece');
-console.log(redpieces);
-console.log(blackpieces);
-for(let i = 0; i < redpieces.length; i++) {
-    redpieces[i].addEventListener('dragover', dragOver);
-}
-
-for(let i = 0; i < blackpieces.length; i++) {
-    blackpieces[i].addEventListener('dragover', dragOver);
-}
-
 function dragStart(e) {
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.dropEffect = "move";
@@ -37,12 +25,12 @@ function dragEnd(e) {
 function dragOver(e) {
     console.log(e);
     e.preventDefault();
-    e.dataTransfer.dropEffect = "move";
-        if (e.target.firstElementChild){
-            if (e.target.firstElementChild.classList.contains('.blackpiece')) {
-            e.target.firstElementChild.remove();
-            } else if (e.target.firstElementChild.classList.contains('.redpiece')) {
-            e.target.firstElementChild.remove();
+    //e.dataTransfer.dropEffect = "move";
+        if (e.target.hasChildNodes){
+            if (e.target.firstChild.classList.contains('blackpiece')) {
+            e.target.firstChild.remove();
+            } else if (e.target.firstChild.classList.contains('redpiece')) {
+            e.target.firstChild.remove();
             } 
         } else {
             return false;
