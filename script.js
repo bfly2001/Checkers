@@ -27,10 +27,23 @@ function dragOver(e) {
     return false;     
 }
 
-function dragEnterRed(e) {
+function dragEnter(e) {
     console.log(e);
-    if (e.currentTarget.className == 'blackpiece') {
-        e.currentTarget.remove();
+    if (e.target.hasChildNodes()) {
+        if (e.target.firstChild.className == 'blackpiece') {
+            e.target.firstChild.classList.add('hidden');
+        } else if (e.target.firstChild.className == 'redpiece') {
+            e.target.firstChild.classList.add('hidden');
+        }
+    } else {
+        return false;
+    }
+}
+
+/*function dragEnterRed(e) {
+    console.log(e);
+    if (e.target.className == 'blackpiece') {
+        e.target.classList.add('hidden');
     } else {
         return false;
     }
@@ -38,12 +51,12 @@ function dragEnterRed(e) {
 
 function dragEnterBlack(e) {
     console.log(e);
-    if (e.currentTarget.className == 'redpiece') {
-        e.currentTarget.remove();
+    if (e.target.className == 'redpiece') {
+        e.target.classList.add('hidden');
     } else {
         return false;
     }
-}
+}*/
 
 function dragDrop(e) {
     //e.preventDefault();
