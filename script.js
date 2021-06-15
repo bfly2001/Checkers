@@ -40,24 +40,6 @@ function dragEnter(e) {
     }
 }
 
-/*function dragEnterRed(e) {
-    console.log(e);
-    if (e.target.className == 'blackpiece') {
-        e.target.classList.add('hidden');
-    } else {
-        return false;
-    }
-}
-
-function dragEnterBlack(e) {
-    console.log(e);
-    if (e.target.className == 'redpiece') {
-        e.target.classList.add('hidden');
-    } else {
-        return false;
-    }
-}*/
-
 function dragDrop(e) {
     //e.preventDefault();
     let src = e.dataTransfer.getData('Text');
