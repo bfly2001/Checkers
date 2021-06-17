@@ -27,17 +27,21 @@ function dragOver(e) {
     return false;     
 }
 
-function dragEnter(e) {
+function dragLeave(e) {
     console.log(e);
-    if (e.target.hasChildNodes()) {
+    if (e.target.children.length > 0) {
         if (e.target.firstChild.className == 'blackpiece') {
-            e.target.firstChild.classList.add('hidden');
+           e.target.firstChild.remove();
+           console.log(e.target.childNodes);
+           console.log(e.target.children);
         } else if (e.target.firstChild.className == 'redpiece') {
-            e.target.firstChild.classList.add('hidden');
-        }
+            e.target.firstChild.remove();
+            console.log(e.target.childNodes);
+            console.log(e.target.children);
     } else {
         return false;
     }
+  }
 }
 
 function dragDrop(e) {
