@@ -24,12 +24,20 @@ function dragEnd(e) {
 
 function dragOver(e) {
     e.preventDefault();
-    return false;     
-}
-
-function dragLeave(e) {
     console.log(e);
-    if (e.target.children.length > 0) {
+    if (e.target.children.length !== 0 && e.target.firstChild.tagName === "IMG") {
+            if (e.target.firstChild.className == 'blackpiece') {
+            e.target.firstChild.remove();
+            } else if (e.target.firstChild.className == 'redpiece') {
+                e.target.firstChild.remove();
+    } else {
+        return false;
+    }    
+    }
+}
+/*function dragLeave(e) {
+    console.log(e);
+    if (e.target.hasChildNodes()) {
         if (e.target.firstChild.className == 'blackpiece') {
            e.target.firstChild.remove();
            console.log(e.target.childNodes);
@@ -42,7 +50,7 @@ function dragLeave(e) {
         return false;
     }
   }
-}
+}*/
 
 function dragDrop(e) {
     //e.preventDefault();
